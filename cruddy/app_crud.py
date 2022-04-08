@@ -114,13 +114,12 @@ def delete():
             po.delete()
     return redirect(url_for('crud.crud'))
 
-
 # Search Form
 @app_crud.route('/search/')
+@login_required
 def search():
     """loads form to search Users data"""
     return render_template("search.html")
-
 
 # Search request and response
 @app_crud.route('/search/term/', methods=["POST"])
