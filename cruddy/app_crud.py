@@ -25,6 +25,11 @@ def crud():
     """obtains all Users from table and loads Admin Form"""
     return render_template("crud.html", table=users_all())
 
+@app_crud.route('/logout') # Logout Button
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 # Flask-Login directs unauthorised users to this unauthorized_handler
 @login_manager.unauthorized_handler
