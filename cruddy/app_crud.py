@@ -125,7 +125,13 @@ def delete():
 def search():
     """loads form to search Users data"""
     return render_template("search.html")
-
+'''
+@app_crud.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+'''
 # Search request and response
 @app_crud.route('/search/term/', methods=["POST"])
 def search_term():
